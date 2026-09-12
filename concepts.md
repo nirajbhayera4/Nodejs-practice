@@ -39,4 +39,8 @@ it is used to manage the project dependencies and scripts.
 9. error handling 
 10. streams 
 
+## what is tsconfig.json?
+tsconfig.json is a file that holds information about the typescript compiler, such as target, module, rootDir, outDir, strict, esModuleInterop, etc.
+it is used to configure the typescript compiler and manage the project dependencies. 
+
 
