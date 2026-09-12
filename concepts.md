@@ -18,3 +18,25 @@ dependency is used to run the project while devDependency is used to develop the
 
 ## runtime package?
 runtime package is used to run the project while dev package is used to develop the project
+
+## "dev" : "tsx watch src/index.ts" means ?
+it means that when we run npm run dev command, it will watch the src/index.ts file and run it when it changes in real time
+
+## package json means?
+package.json is a file that holds information about the project, such as name, version, dependencies, scripts, etc.
+it is used to manage the project dependencies and scripts.
+
+
+## to cover 
+1. process object
+2. path module 
+3. file system module 
+4. event loop basics
+5. callback, promise and async await.
+6. event emitter 
+7. buffers
+8. crypto module 
+9. error handling 
+10. streams 
+
+
