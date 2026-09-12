@@ -13,3 +13,8 @@ it uses v8 engine to run js code which GOOGLE also uses in chrome browser
 
 node modules hold all the dependencies of the project in a folder called node_modules. it is created when we run npm install command
 
+## what is dependency and devDependency?
+dependency is used to run the project while devDependency is used to develop the project
+
+## runtime package?
+runtime package is used to run the project while dev package is used to develop the project
