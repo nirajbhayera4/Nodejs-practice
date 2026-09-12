@@ -48,7 +48,35 @@ console.log(process.cwd());
 // it tell the directory from where the node.js was started 
 
 4.// stop the program 
-process.exit(0);
+//process.exit(0);
+
+5.//process.exitcode
+// instead of immediately stopping the code
+process.exitCode=1;
+
+
+6.//process.version
+console.log(process.version);
+// and if want to see more versions 
+console.log(process.versions);
+
+
+7.//process platform ----tells you the operating system
+console.log(process.platform);
+
+8.//process pid---every running process has a unique process id that is PID
+console.log(process.pid);
+// useful when working with the server and system processes 
+
+
+9.//process.memoryUsage()---shows how much memory the node.js process is using 
+console.log(process.memoryUsage());
+
+10.//process.stdin and process.stdout--- represents the standard input and output 
+process.stdout.write("hello world");
+//similar to console.log()
+
+
 
 
 
