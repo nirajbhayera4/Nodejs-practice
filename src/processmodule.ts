@@ -34,3 +34,21 @@ console.log(process.argv);
 console.log(process.argv[2]); // niraj 
 console.log(process.argv[3]); //22
 
+// EXAMPLE 
+const name1=process.argv[2];
+console.log(`hello ${name1}`);
+
+2.// env variables ----used heavily for
+// API keys, database urls,pass,configs,PORT
+
+
+3.//current working directory 
+console.log(process.cwd());
+
+// it tell the directory from where the node.js was started 
+
+4.// stop the program 
+process.exit(0);
+
+
+
