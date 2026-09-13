@@ -59,3 +59,20 @@ console.log(path1.extname(filePath)); //output .js
 6.//path.parse()---------> parses the path into an object
 console.log(path1.parse(filePath));
 
+7.// path resolve----> creates an absolulte path 
+console.log(path1.resolve(filePath));
+
+8.//path is absolute----> checks if the path is absolute absolute path
+console.log(path1.isAbsolute(filePath));
+
+9.//real world example with __dirname
+//--> suppose there is a project folder with the following structure:
+// project/
+//app.js--->data/users.json
+
+// you can create the path to users.json
+const examplepath=require("path");
+const filepath8=path1.join(__dirname, "data", "users.json");
+console.log(filepath8);
+
+

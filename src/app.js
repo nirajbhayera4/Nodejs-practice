@@ -77,4 +77,22 @@ console.log(anypath.extname(filepath0)); //output .js
 console.log(anypath.parse(filepath0)); //-----> give in object form 
 
 
+7.//path resolve--->  creates an absolute path from a relative path or a string of paths
+console.log(anypath.resolve(filePath));
+// output C:\\Users\\niraj\\Desktop\\Nodejs%20practice\\src\\app.js
+
+8.// path is absolute----> checks if the path is absolute absolute path
+console.log(anypath.isAbsolute(filePath));
+
+9.//real world example with __dirname
+//--> suppose there is a project folder with the following structure:
+// project/
+//app.js--->data/users.json
+
+// you can create the path to users.json 
+const path1=require("path");
+const filepath8=path1.join(__dirname, "data", "users.json");
+console.log(filepath8);
+//output C:\\Users\\niraj\\Desktop\\Nodejs%20practice\\src\\data\\users.json
+
 
