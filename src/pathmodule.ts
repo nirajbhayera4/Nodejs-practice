@@ -15,13 +15,20 @@
 // in commmon js --->
 const path1=require("path");
 // in ES modules---->
-import path from "path";
+import path2 from "path";
 
 //but in node js , we'll commonly see---->
+<<<<<<< Updated upstream
 const path2=require("path");
 
 //2. PATH.JOIN()---->one of the most used methods
 const path3=require("path");
+=======
+const path1=require("path");
+
+//2. PATH.JOIN()---->one of the most used methods
+const path2=require("path");
+>>>>>>> Stashed changes
 const result=path.join("users", "niraj","documents");
 console.log(result);
 
