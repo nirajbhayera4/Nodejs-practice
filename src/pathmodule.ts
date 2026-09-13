@@ -13,25 +13,29 @@
 //1. IMPORT THE "PATH" MODULE
 
 // in commmon js --->
-const path=require("path");
+const path1=require("path");
 // in ES modules---->
 import path from "path";
 
 //but in node js , we'll commonly see---->
-const path=require("path");
+const path2=require("path");
 
 //2. PATH.JOIN()---->one of the most used methods
-const path=require("path");
+const path3=require("path");
 const result=path.join("users", "niraj","documents");
 console.log(result);
 
 // on windows 
-users\niraj\documents
+//users\niraj\documents
 // on macos\linux
-users/niraj/documents
+//users/niraj/documents
 
 // WHY WE USE THE PATH JOIN ?
 // instead of manually doing----->
-const filepath="users/" + "niraj/" +"documents";
+const filepath1="users/" + "niraj/" +"documents";
 // we use ------>
 const filepath=path.join("users", "niraj", "documents"); //---> here the node will automatically uses the coreect path separator for the OS
+
+//3. path.basename()---> get the file name from the path
+const anypath=require("path");
+const filepath0="c"
