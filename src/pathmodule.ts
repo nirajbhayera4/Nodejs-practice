@@ -15,21 +15,21 @@
 // in commmon js --->
 const path1=require("path");
 // in ES modules---->
-import path2 from "path";
+import anypath3 from "path";
 
 //but in node js , we'll commonly see---->
-<<<<<<< Updated upstream
+
 const path2=require("path");
 
 //2. PATH.JOIN()---->one of the most used methods
 const path3=require("path");
-=======
-const path1=require("path");
+
+const anypath1=require("path");
 
 //2. PATH.JOIN()---->one of the most used methods
-const path2=require("path");
->>>>>>> Stashed changes
-const result=path.join("users", "niraj","documents");
+const anypath0=require("path");
+
+const result=path1.join("users", "niraj","documents");
 console.log(result);
 
 // on windows 
@@ -41,7 +41,7 @@ console.log(result);
 // instead of manually doing----->
 const filepath1="users/" + "niraj/" +"documents";
 // we use ------>
-const filepath=path.join("users", "niraj", "documents"); //---> here the node will automatically uses the coreect path separator for the OS
+const filepath=path1.join("users", "niraj", "documents"); //---> here the node will automatically uses the coreect path separator for the OS
 
 //3. path.basename()---> get the file name from the path
 const anypath=require("path");
