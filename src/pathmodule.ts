@@ -1,0 +1,37 @@
+// the path modules is a built in module used for working with the file and directory paths.
+// you can use it when u need to :
+//1. join paths
+//2. find the filename
+//3. find the extension
+//4. get he directory name 
+//5. get the absolute path
+//6. normalize paths
+//7. work with paths safely across windows/ linux/ windows.
+
+// YOU DONT NEED TO INSTALL ANYTHING 
+
+//1. IMPORT THE "PATH" MODULE
+
+// in commmon js --->
+const path=require("path");
+// in ES modules---->
+import path from "path";
+
+//but in node js , we'll commonly see---->
+const path=require("path");
+
+//2. PATH.JOIN()---->one of the most used methods
+const path=require("path");
+const result=path.join("users", "niraj","documents");
+console.log(result);
+
+// on windows 
+users\niraj\documents
+// on macos\linux
+users/niraj/documents
+
+// WHY WE USE THE PATH JOIN ?
+// instead of manually doing----->
+const filepath="users/" + "niraj/" +"documents";
+// we use ------>
+const filepath=path.join("users", "niraj", "documents"); //---> here the node will automatically uses the coreect path separator for the OS
