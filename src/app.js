@@ -50,7 +50,31 @@ console.log(process.memoryUsage());
 // useful when debugging memory problems 
 
 10.//process.stdin and process.stdout--- represents the standard input and output 
-process.stdout.write("hello world");
+process.stdout.write("hello world\n");
 //similar to console.log()
 // process.stdin.write("hello world");
 //similar to console.log()
+
+
+//------------------------------------------------PATH MODULES------------------------
+3.// path.basename()
+
+const anypath=require("path");
+const filepath0="C:\\Users\\niraj\\Desktop\\Nodejs%20practice\\src\\app.js";
+console.log(anypath.basename(filepath0));
+
+
+4.//4. path.dirname()---------> gets the directory/folder part 
+const filePath = "C:\\Users\\niraj\\Desktop\\Nodejs%20practice\\src\\app.js";
+
+console.log(anypath.dirname(filePath)); //output C:\\Users\\niraj\\Desktop\\Nodejs%20practice\\src
+
+
+5.//5. path.extname()---------> gets the file extension
+console.log(anypath.extname(filepath0)); //output .js
+
+6.//path.parse()---------> parses the path into an object
+console.log(anypath.parse(filepath0)); //-----> give in object form 
+
+
+

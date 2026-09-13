@@ -45,4 +45,17 @@ const filepath=path1.join("users", "niraj", "documents"); //---> here the node w
 
 //3. path.basename()---> get the file name from the path
 const anypath=require("path");
-const filepath0="c"
+const filepath0="C:\\Users\\niraj\\Desktop\\Nodejs%20practice\\src\\pathmodule.ts";
+console.log(anypath.basename(filepath0));
+
+//4. path.dirname()---------> gets the directory/folder part 
+const filePath = "C:\\Users\\niraj\\Desktop\\Nodejs%20practice\\src\\app.js";
+
+console.log(path1.dirname(filePath));
+
+//5. path.extname()---------> gets the file extension
+console.log(path1.extname(filePath)); //output .js
+
+6.//path.parse()---------> parses the path into an object
+console.log(path1.parse(filePath));
+
