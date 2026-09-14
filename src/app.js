@@ -110,3 +110,34 @@ fs.readFile("message.txt", "utf8",(err,data)=>{
     }
     console.log(data);
 })
+
+3.// writing the file---> you can write the new file or overwrite a existing file 
+
+fs.writeFile("message.txt", "Hello Node.js!", (err)=>{
+    if(err){
+        console.log(err);
+        return ;
+
+    }
+    console.log("File written successfully ");
+})
+
+4.// appending the file----> if you want to delete the existing content , we can use the appendFile()
+fs.appendFile("message.txt", "\nwelcome to the backend development!",(err)=>{
+    if(err){
+        console.log(err);
+        return;
+    }
+    console.log("data added");
+})
+
+
+5.// deleting the  file ----> you can use the unlink() method to delete a file
+fs.unlink("message.txt",(err)=>{
+    if(err){
+        console.log(err);
+        return ;
+
+    }
+    console.log("File deleted")
+})
