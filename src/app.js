@@ -96,3 +96,17 @@ console.log(filepath8);
 //output C:\\Users\\niraj\\Desktop\\Nodejs%20practice\\src\\data\\users.json
 
 
+//------------------------------------------------FILE SYSTEM MODULES------------------------
+
+1.// import the fs module 
+const fs=require("fs");
+
+2.//read the file 
+//----> you can read the file from this method
+fs.readFile("message.txt", "utf8",(err,data)=>{
+    if(err){
+        console.log(err);
+        return;
+    }
+    console.log(data);
+})
