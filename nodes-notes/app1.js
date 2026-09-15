@@ -12,6 +12,8 @@ const datafolder=process.env.DATA_FOLDER;
 const filepath=path.join(datafolder, "notes.json");
 
 if(command==="add"){
+    // this format is simple text format 
+/*
     const notes=[
         {
             id:1,
@@ -24,6 +26,17 @@ if(command==="add"){
             return ;
         }
         console.log("note added successfully");
+    })
+        */
+
+    // to convert the notes into json format 
+    fs.readFile(filepath, "utf8", (err, data)=>{
+        if(err){
+            console.log("error:",err.message);
+            return ;
+        }
+        const notes=JSON.parse(data);
+        console.log(notes);
     })
 }
 
