@@ -41,6 +41,124 @@ console.log("b");
 here---> the setTimeout() is an asynchronous operation. it means that it will not block the main thread while it is running the code.
 
 
+# 3.event loop flow 
+
+javascript code 
+|------------------|
+|------------------|
+|------------------|
+|------------------|
+call stack
+|------------------|
+|------------------|
+node.js handles async work 
+|------------------|
+|------------------|
+callback queue
+|------------------|
+|------------------|
+|------------------|
+|------------------|
+event loop
+|------------------|
+|------------------|
+call stack
+
+## 4. Example with setTimeout
+console.log("1");
+
+setTimeout(() => {
+    console.log("2");
+}, 0);
+
+console.log("3");
+
+Many beginners expect:
+
+1
+2
+3
+
+But the output is:
+
+1
+3
+2
+
+Why?
+
+Step-by-step
+
+First:
+
+console.log("1");
+
+Call Stack:
+
+console.log("1")
+
+Output:
+
+1
+
+Then:
+
+setTimeout(..., 0);
+
+Node.js registers the timer and continues.
+
+It doesn't mean "execute immediately."
+
+Then:
+
+console.log("3");
+
+Output:
+
+3
+
+Once the current JavaScript execution finishes, the timer callback can be processed.
+
+So:
+
+1
+3
+2
+
+## 5. Very important: 0ms doesn't mean immediately-----0ms baad dubara is function pe ayega
+
+
+This:
+
+setTimeout(() => {
+    console.log("Hello");
+}, 0);
+
+does not mean:
+
+Execute Hello right now.
+
+It means approximately:
+
+Run this callback after the timer becomes eligible, when the event loop gets an opportunity to execute it.
+
+For example:
+
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Timer");
+}, 0);
+
+console.log("End");
+
+Output:
+
+Start
+End
+Timer
+
+
 
 
 
