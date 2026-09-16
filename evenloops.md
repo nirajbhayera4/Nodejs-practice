@@ -213,4 +213,62 @@ The Event Loop is like the waiter coordinating what needs attention next.
 
 
 
+## 9. callback, promise and async await.
+
+these are three different way to handle the asynchronous operations.
+
+evolution :
+
+Callback
+   ↓
+Promise
+   ↓
+async / await
+
+
+## 9.1 what is callback ?
+// a callback is a function that gives you another function so it call your function later.
+
+example--->
+
+function greet(name, callback){
+    console.log("hello", name);
+    callback();
+
+}
+greet("niraj", function()){
+    console.log("welcome");
+}
+
+here--> function () {
+    console.log("Welcome!");
+} is the callback 
+
+output-->
+Hello Niraj
+Welcome!
+
+## callback with fs module
+
+fs.readFile("message.txt", "utf8", (err, data) => {
+    console.log(data);
+});
+
+here---> the callback is (err, data)=>{
+    console.log(data);
+}
+
+## problem with the callback is that---> if you have many asynchronous operations, you will have a callback hell.
+
+doTask1(() => {
+    doTask2(() => {
+        doTask3(() => {
+            doTask4(() => {
+                // 😵
+            });
+        });
+    });
+});
+
+# thats y the promise is used to handle the callback hell.
 
