@@ -313,3 +313,81 @@ promise.then((data)=>{
 Success → .then()
    ↓
 Failure → .catch()
+
+
+## what is async await?
+// async await is a syntax sugar for promise chaining.
+
+// is a cleaner way to work with promises
+// their syntax is built around the promises
+
+
+# example---->
+readFile()
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+----> this can be written using async await.
+async function readFile(){
+    try{
+        const data=await readFile();
+        console.log(data);
+
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+# what does the await actually means?
+suppose--->
+
+const data =await readFile();
+
+---> this means that the readFile() function will be called and the code will wait for the readFile() function to return the data.
+
+
+## but await does not block the other operations, it simply pauses the execution of the code until the readFile() function returns the data.
+
+for example--->
+async function getData() {
+    console.log("A");
+
+    const data = await someAsyncOperation();
+
+    console.log("B");
+}
+
+console.log("Start");
+
+getData();
+
+console.log("End");
+
+output--->
+Start
+A
+End
+...async operation finishes...
+B
+
+
+## why do we use async ?
+the async keyword tell the js that " this function works with asynchronous operations and returns a promise "
+
+async function hello() {
+    return "Hello";
+}
+
+even thought we are returning the string "Hello", the function will return a promise.
+
+so--->
+hello().then((data)=>{
+    console.log(data);
+}); 
+
+means that the hello() function will be called and the code will wait for the hello() function to return the data.
