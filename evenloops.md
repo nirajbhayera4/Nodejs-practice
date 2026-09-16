@@ -157,11 +157,58 @@ Output:
 Start
 End
 Timer
+ 
+## 7. Call Stack vs Event Loop
 
+These two are important:
 
+Call Stack
 
+Keeps track of what JavaScript is currently executing.
 
+Event Loop
 
+Keeps checking:
+
+"Is the Call Stack free? Is there some asynchronous work ready to continue?"
+
+Simplified:
+
+             Call Stack
+                 ↑
+                 │
+             Event Loop
+                 ↑
+                 │
+       Callback / async work
+
+## 8. A simple real-world analogy
+
+Imagine you're a waiter in a restaurant.
+
+You take an order from Customer A:
+
+Customer A → "Give me pizza."
+
+You don't stand in the kitchen waiting for the pizza.
+
+Instead:
+
+Take order
+   ↓
+Send order to kitchen
+   ↓
+Serve Customer B
+   ↓
+Serve Customer C
+   ↓
+Pizza ready
+   ↓
+Give pizza to Customer A
+
+That's basically the idea behind asynchronous Node.js.
+
+The Event Loop is like the waiter coordinating what needs attention next.
 
 
 
