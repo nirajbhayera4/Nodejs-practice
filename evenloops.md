@@ -272,3 +272,44 @@ doTask1(() => {
 
 # thats y the promise is used to handle the callback hell.
 
+# what is promise?
+a promise represents the eventual result of an asynchronous operation.
+
+like---> " i promise you that i will be back in 2 seconds."
+
+a promise have three states :
+
+             Promise
+                │
+       ┌────────┼────────┐
+       ↓        ↓        ↓
+    Pending  Fulfilled  Rejected
+              (success)  (error)
+
+## example 
+const promise= new promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve("timer finished");
+    }, 2000);
+})
+
+--> initial state is pending.
+--> after 2 seconds, the promise is fulfilled.
+
+output--> timer finished
+
+# why we use .then() and .catch() methods?
+// to handle the success and failure of the promise respectively.
+
+promise.then((data)=>{
+    console.log(data);
+})
+.catch((err)=>{
+        console.log(err);
+});
+
+---> output--> timer finished        Promise
+   ↓
+Success → .then()
+   ↓
+Failure → .catch()
