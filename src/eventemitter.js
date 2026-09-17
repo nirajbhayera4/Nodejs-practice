@@ -17,7 +17,7 @@ emitter.on("message", ()=>{
 //on() means
 emitter.on("message", ()=>{
     console.log("message received");
-    
+
 });
 
 //emit() means
@@ -25,3 +25,28 @@ emitter.emit("message");
 
 // output---->
 // message received
+
+//---------PASSING THE DATA WITH AN EVENT--------------
+const EventEmitter=require("events");
+const emitter1= new EventEmitter();
+emitter1.on("message",(username)=>{
+    console.log(username + " logged in" );
+});
+
+emitter1.emit("message", "john");
+
+// output---->
+// john logged in
+
+//4. multiple listeners
+//------one event have multiple listeners------
+emitter1.on("message",(username)=>{
+    console.log(username + " logged in" );
+});
+emitter1.on("message",(username)=>[
+    console.log(username + "doing some activity")
+])
+emitter1.emit("message", "jane");
+// output---->
+//jane logged in
+// jane doing some activity

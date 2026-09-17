@@ -9,4 +9,12 @@ on() means "listen for this event"
 emit() means "this event has happened"
 
 # passing the data with an event
+const EventEmitter=require("events");
+const emitter= new EventEmitter();
+emitter.on("message",(username)=>{
+    console.log(username + " logged in" );
+})
+emitter.emit("message", "john");
 
+// output---->
+// john logged in
