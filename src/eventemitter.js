@@ -50,3 +50,19 @@ emitter1.emit("message", "jane");
 // output---->
 //jane logged in
 // jane doing some activity
+
+
+//5. once() ---- sometimes you just want  a listnere to execute the callback once even after calling multiplet times 
+emitter1.once("message",(username)=>{
+    console.log(username + "doing some activity")
+})
+emitter1.emit("message", "jane");
+emitter1.emit("message", "jane");
+
+// output---->
+
+// jane doing some activity---output will be only once
+
+// on() runs everytime the event occurs 
+// once() runs only once
+
