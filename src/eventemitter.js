@@ -92,3 +92,16 @@ orderevents.emit("orderplaced", "123456");
 // updating inventory....
 // creating invoice....
 
+
+//7. event emitter and callbacks
+// we might notice something :
+emitter.on("login", (username)=>{
+    console.log(username);
+})
+// the username function is actually a callback function, so the eventemitter uses the callback internally 
+
+8.// event emitter and event loop 
+// these two are different
+// EVENT EMITTER ------> responsible for events and listeners
+// EVENT LOOP----------> responsible for managing when the js can execute the asynchronous code
+
