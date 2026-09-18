@@ -105,3 +105,17 @@ emitter.on("login", (username)=>{
 // EVENT EMITTER ------> responsible for events and listeners
 // EVENT LOOP----------> responsible for managing when the js can execute the asynchronous code
 
+
+9.// node js uses the eventemitter everywhere
+// many node.js API's are based on events 
+
+// for example, HTTPS servers
+const http=require("http");
+const server=http.createServer((req, res)=>{
+    res.end("hello world");
+})
+server.listen(3000);
+// output---->
+// Server is running on port 3000
+
+
