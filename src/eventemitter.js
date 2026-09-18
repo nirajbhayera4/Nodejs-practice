@@ -119,3 +119,4 @@ server.listen(3000);
 // Server is running on port 3000
 
 
+//Things like servers, streams and some other node.js API's uses the event driven patterns.
