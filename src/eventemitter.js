@@ -66,3 +66,29 @@ emitter1.emit("message", "jane");
 // on() runs everytime the event occurs 
 // once() runs only once
 
+
+//6. eventemitter with real world example 
+// imagine an online store 
+//---------order placed event
+// order placed event----> send email
+//                   ----> update stock 
+//                   ----> create invoice 
+
+
+const orderevents=new EventEmitter();
+orderevents.on("orderplaced", (orderid)=>{
+    console.log("sending confirmation email....");
+});
+orderevents.on("orderplaced", (orderid)=>{
+    console.log("updating inventory....");
+});
+orderevents.on("orderplaced", (orderid)=>{
+    console.log("creating invoice....");
+});
+orderevents.emit("orderplaced", "123456");
+
+// output---->
+// sending confirmation email....
+// updating inventory....
+// creating invoice....
+
