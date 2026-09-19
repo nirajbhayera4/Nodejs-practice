@@ -107,3 +107,29 @@ Instead, Node.js can process it in chunks:
 This is closely related to Streams, which you'll learn next.
 */
 
+8.// buffers vs strings 
+// string represents the txt , buffer represents the bytes
+// strings are mutable , buffers are immutable
+// strings are utf-8 encoded , buffers are not
+
+
+9.//buffer and streams
+/*
+Stream
+   ↓
+receives chunks
+   ↓
+Buffer
+   ↓
+process chunk
+   ↓
+next chunk
+
+*/
+// example
+stream.on("data", (chunk)=>{
+    console.log(chunk);
+});
+// output :
+//<Buffer 68 65 6c 6c 6f>
+//<Buffer 20 69 73 68 65 6c 6c 6f>
