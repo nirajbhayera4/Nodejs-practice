@@ -140,5 +140,20 @@ transformStream.on("data", (chunk)=>{
 
 
 
+8.// pipe() method
+// pipe() method is used to connect two streams together
+// it is used to transfer data from one stream to another
 
+// example
+const stream2=fs.createReadStream("message.txt");
+stream2.pipe(transformStream);
+// output :
+// hello is a string
 
+// example-----suppose you want to copy a file , so instead of handling every chunk:
+const fs=require("fs");
+const readble=fs.createReadStream("message.txt");   
+const writeble=fs.createWriteStream("message_copy.txt");
+readble.pipe(writeble);
+// output :
+// no more data
