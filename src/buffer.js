@@ -56,4 +56,24 @@ console.log(buffer3.length);
 //5
 
 
+6.// Buffer and fs--- it simply means the use case of the utf-8 encoding in the fs module
+
+// without encoding 
+const fs=require("fs");
+fs.readFile("message.txt", (err,data)=>{
+    console.log(data);
+});
+
+//---- here the data i buffer
+// output :
+//<Buffer 68 65 6c 6c 6f 20 69 73 68 65 6c 6c 6f>
+
+// with encoding 
+fs.readFile("message.txt", "utf-8", (err,data)=>{
+    console.log(data);
+});
+
+//---- here the data i string
+// output :
+//hello is a string
 
