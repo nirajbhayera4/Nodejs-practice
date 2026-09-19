@@ -42,4 +42,18 @@ console.log(buffer1.toString());
 //hello
 
 
-4.//
+4.//buffer is basicallly bytes 
+// we can access the individual bytes in the buffer by using the index number
+const buffer2=Buffer.from("hello");
+console.log(buffer2[0]);
+//output:
+//68
+
+5.// Buffer length 
+const buffer3=Buffer.from("hello");
+console.log(buffer3.length);
+//output:
+//5
+
+
+
