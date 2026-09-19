@@ -73,4 +73,72 @@ console.log(chunk.toString());
 // hello is a string
 
 
+4.// the data event---> important stream events 
+
+stream.on("data", (chunk)=>{
+    console.log(chunk.toString);
+})
+
+/*
+File:
+"ABCDEFGHIJK"
+
+       ↓
+
+Chunk 1 → "ABC"
+Chunk 2 → "DEF"
+Chunk 3 → "GHI"
+Chunk 4 → "JK"
+*/
+
+5.// the end event----> when there is no more data 
+stream.on("end",()=>{
+    console.log("no more data");
+})
+
+// data → data → data → data → end
+
+6.// THE ERROR EVENT----> what if the file doesn't exist ? 
+
+stream.on("error", (err)=>{
+    console.log("error:", err.message);
+
+})
+
+
+7.// FOUR TYPES OF STREAMS
+
+//7.1. readable------> used to read the data 
+fs.createReadStream("message.txt"); // File → Application
+
+//7.2 writable------> used to write the data 
+fs.createWriteStream("message.txt"); // Application → File
+
+//7.3 duplex------> used to read and write the data 
+fs.createReadStream("message.txt"); // File → Application
+fs.createWriteStream("message.txt"); // Application → File
+fs.createlexStream("message.txt"); // File → Application → File
+
+//7.4 transform------> used to transform the data
+const transformStream=fs.createTransformStream();
+transformStream.on("data", (chunk)=>{
+    console.log(chunk.toString());
+})
+
+// it changes the data while it passes through 
+// example 
+/*
+Large data
+    ↓
+Compression Stream
+    ↓
+Smaller data*/
+// example
+transformStream.on("data", (chunk)=>{
+    console.log(chunk.toString());
+}) // means the transform stream is compressing the data while it passes through
+
+
+
+
 
