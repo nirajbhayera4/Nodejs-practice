@@ -77,3 +77,33 @@ fs.readFile("message.txt", "utf-8", (err,data)=>{
 // output :
 //hello is a string
 
+
+
+7.// why buffers useful for large files ?
+/*
+
+Imagine a 2 GB video.
+
+It would be inefficient to load the entire video into memory at once.
+
+Instead, Node.js can process it in chunks:
+
+2 GB Video
+    ↓
+┌────────┐
+│ Buffer │  chunk 1
+└────────┘
+    ↓
+┌────────┐
+│ Buffer │  chunk 2
+└────────┘
+    ↓
+┌────────┐
+│ Buffer │  chunk 3
+└────────┘
+    ↓
+   ...
+
+This is closely related to Streams, which you'll learn next.
+*/
+
