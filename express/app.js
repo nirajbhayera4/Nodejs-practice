@@ -77,3 +77,59 @@ DELETE /account
 5.// huge node.js ecosystem
 
 
+
+
+4.// what is a route ?
+// a route is specific url + http methods that tells the server what tp do when a request comes in.
+
+// example 
+app.get("/users", (req, res) => {
+    res.send("All users");
+});
+// here the route is /users and the http method is get
+// get method is used to fetch the data from the server
+
+5.// what is routing ?
+// it is the process od deciding which code should handle the particular request 
+
+const express = require("express");
+
+const app2= express();
+
+app2.get("/", (req, res) => {
+    res.send("Home Page");
+});
+
+app2.get("/about", (req, res) => {
+    res.send("About Page");
+});
+
+app2.get("/users", (req, res) => {
+    res.send("Users Page");
+});
+
+app2.listen(3000);
+/*
+http://localhost:3000/
+        ↓
+Home Page
+
+http://localhost:3000/about
+        ↓
+About Page
+
+http://localhost:3000/users
+        ↓
+Users Page
+*/
+
+// HTTP METHODS 
+/*
+Method	      Purpose
+GET	          Get data
+POST	      Create data
+PUT	Update    data
+PATCH	      Partially update data
+DELETE	      Delete data
+*/
+
