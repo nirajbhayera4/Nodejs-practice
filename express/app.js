@@ -244,4 +244,65 @@ const login=async (req, res)=>{
 };
 
 
+11.// error handling in express 
+
+// it means catching erroar while processing a req adn sending a proper response to the clinet instead of letting the server crash or return and unclear response 
+
+// example 
+1.// normal error handling 
+app.get("/user", (req, res)=>{
+    throw new Error("user not found");
+});
+// output: user not found"
+
+2.// instead of doing the above many times 
+app.get("/users", (req, res) => {
+    // ...
+});
+
+app.get("/products", (req, res) => {
+    // ...
+});
+
+app.get("/orders", (req, res) => {
+    // ...
+});
+
+// we use a central error handler middleware 
+app.use((err, req, res, next) => {
+    res.status(500).json({
+        message: err.message
+    });
+});
+
+// instead of throwing an error , middleware or a route can do 
+app.get("/user",(req, res, next)=>{
+    const error= new Error("user not found");
+    next(error);
+});
+
+next(error); // it tells the express to move to the next middleware or route handler
+
+//now , the central error handler middleware will be called
+
+app.use((err, req, res, next)=>{
+    res.status(404).json({
+        message : err.message
+    });
+});
+
+/*response: {
+    "message": "user not found"
+}   */
+
+    /*
+    400 → Bad request
+401 → Not authenticated
+403 → Not authorized
+404 → Resource not found
+500 → Server error
+
+*/
+
+
 
