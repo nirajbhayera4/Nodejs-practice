@@ -133,3 +133,60 @@ PATCH	      Partially update data
 DELETE	      Delete data
 */
 
+
+6.// what is a middleware ?
+// it is a function which runs between the incoming request and the final route handler 
+// they act as security checkpoint 
+// example 
+
+const express=require("express");
+const app3=express();
+
+function checkuser(req,res,next){
+    console.log("middleware executed");
+    next();
+}
+
+app.get("profile",checkuser,(req,res)=>{
+    res.send("profile page");
+});
+app3.listen(3000); //output: middleware executed  profile page
+
+// so when we visit GEET/profile 
+/*
+Request
+   ↓
+checkUser()
+   ↓
+next()
+   ↓
+/profile handler
+   ↓
+"Profile page"
+*/
+
+9.// why we needn the middleware ?
+// it is useful for the things that should happen before a route runs
+
+// example 
+1.// LOGGING
+
+function logger(req,res,next){
+    console.log(req.method, req.url);
+    next();
+}
+
+2.// AUTHENTICATION
+// it is used to verify the identity of the user
+function auth(req,res,next){
+    console.log("auth middleware");
+    next();
+}
+
+3.// PARSING JSON
+// it is used to parse the JSON request bodies
+function jsonParser(req,res,next){
+    console.log("json parser middleware");
+    next();
+}
+
