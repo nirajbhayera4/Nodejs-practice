@@ -54,4 +54,26 @@ app.get("/profile", (req, res) => {
     });
 });
 
+2.3// MIDDLEWARES-- it allows the  express to understand the JSON request bodies 
+
+2.4// API'S 
+/*
+POST /signup
+POST /login
+GET  /users
+GET  /profile
+PUT  /profile
+DELETE /account
+*/
+
+
+3.// Why expess js?
+// we use express js because building a backend server directly with node.js is possible , but express makes it much easier and cleaner 
+
+1.// easy routing
+2.// middleware
+3.// easy api development
+4.// handles http req and res 
+5.// huge node.js ecosystem
+
 
