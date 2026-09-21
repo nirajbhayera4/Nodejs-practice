@@ -190,3 +190,58 @@ function jsonParser(req,res,next){
     next();
 }
 
+10.// WHAT ARE THE CONTROLLERS ?
+// controllers are the functions that handle the requests and send the responses
+// controllers is a function that contains the actual bussiness logic for handling the requests
+
+// without controllers, we might write everything isnide our route 
+app.post("/login", async (req, res) => {
+
+    const { email, password } = req.body;
+
+    // Find user
+    // Check password
+    // Generate JWT
+    // Send response
+
+});
+
+// this works but it is not scalable 
+
+// with controllers , we separate the logic 
+/*
+project/
+│
+├── routes/
+│   └── authRoutes.js
+│
+├── controllers/
+│   └── authController.js
+│
+├── middleware/
+│   └── authMiddleware.js
+│
+└── app.js
+*/
+
+
+// suppose there is a login router 
+router.post("login", login);
+
+// when the post/ login comes in, cal login
+
+// login controller
+const login=async (req, res)=>{
+    const { email, password}=req.body;
+
+    // find the user 
+    // check pass
+    // generate jwt 
+
+    res.json({
+        message: "login successful"
+    });
+};
+
+
+
